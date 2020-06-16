@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-electron": {
+    "kitescontrol-UI": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -84,24 +84,24 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "angular-electron:build"
+            "browserTarget": "kitescontrol-UI:build"
           },
           "configurations": {
             "dev": {
-              "browserTarget": "angular-electron:build:dev"
+              "browserTarget": "kitescontrol-UI:build:dev"
             },
             "web": {
-              "browserTarget": "angular-electron:build:web"
+              "browserTarget": "kitescontrol-UI:build:web"
             },
             "production": {
-              "browserTarget": "angular-electron:build:production"
+              "browserTarget": "kitescontrol-UI:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-electron:build"
+            "browserTarget": "kitescontrol-UI:build"
           }
         },
         "test": {
@@ -139,7 +139,7 @@
         }
       }
     },
-    "angular-electron-e2e": {
+    "kitescontrol-UI-e2e": {
       "root": "e2e",
       "projectType": "application",
       "architect": {
@@ -158,7 +158,7 @@
       }
     }
   },
-  "defaultProject": "angular-electron",
+  "defaultProject": "kitescontrol-UI",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
