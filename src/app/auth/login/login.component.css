@@ -1,0 +1,47 @@
+:host {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 400px 500px;
+
+    background-color: rgb(177, 178, 179);
+
+}
+
+.errorMessage{
+  place-self: center;
+  color: rgb(192, 38, 38);
+  font-size: 17px;
+}
+.login-form-container {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    height: 300px;
+    width: 500px;
+
+    outline: dashed 2px rgb(61, 123, 158);
+    align-self: center;
+    justify-self: center;
+}
+
+.login-form-container form{
+  display: flex;
+  flex-direction: column;
+  place-self: center;
+  gap: 20px;
+}
+
+
+.login-form-container .login-button {
+    width: 140px;
+    color: black;
+    align-self: center;
+
+    background-color:#81cdff;
+
+    border-radius: 7px;
+    border-style: solid;
+    border-color: #3f8dc0;
+
+}

@@ -1,0 +1,59 @@
+
+
+<!-- <a routerLink="/dashboard">Back</a> -->
+<!-- <button class="back-button" routerLink='/dashboard'>Back</button> -->
+
+
+<!-- [ng-model]='searchValue' -->
+<div class="search-field" >
+  <input  #inputBox  (input)="search(inputBox.value)" type="text"  placeholder="Szukaj instruktora..."/>
+</div>
+  <div class="search-list-container">
+    <ul class="search-ul-Parent" *ngIf="searchList.length">
+      <li class="searchElement" *ngFor="let instructor of searchList" >
+        <a [routerLink]="['./', instructor.id]">
+          {{instructor.name}} {{instructor.surname}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+<div class="instructors-table" >
+
+    <table class="table table-sm table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Imię</th>
+                <th scope="col">Nazwisko</th>
+                <th scope="col">Data urodzenia</th>
+                <th scope="col">Waga</th>
+                <th scope="col">Grupowe</th>
+                <th scope="col">Aktywny</th>
+                <th scope="col">Szczegóły</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let instructor of instructors?.results; index as i">
+                <td>{{i+1}}</td>
+                <td>{{instructor.name}}</td>
+                <td>{{instructor.surname}}</td>
+                <td>{{instructor.birth_date}}</td>
+                <td>{{instructor.weight}}</td>
+                <td>{{instructor.group_lessons}}</td>
+                <td>{{instructor.active}}</td>
+                <td class="table-details-col">
+                  <a [routerLink]="['./', instructor.id]">Szczegóły</a>
+                  <span (click)="confirmDelete(instructor)" title="Usuń">
+                    <i  class="fas fa-user-times"></i>
+                  </span>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+

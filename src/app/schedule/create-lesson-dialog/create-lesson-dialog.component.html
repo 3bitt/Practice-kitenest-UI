@@ -1,0 +1,278 @@
+
+<h2 mat-dialog-title>Nowa lekcja</h2>
+<mat-dialog-content class="dialog-content">
+
+  <form class="dialog-form"
+  autocomplete="off" id="lessonForm"
+  #lessonForm="ngForm" >
+
+  <div class="validation-error" *ngIf="lessonTimeConflict">
+      <b>Lekcja konfliktuje z inną lekcją tego instruktora!</b><br/>
+      Zmień godzine lekcji lub instruktora
+  </div>
+
+    <div class="lesson-time-group">
+      <div class="form-field date-field">
+        <label for="date">Data</label>
+
+        <input class="form-control lesson-date-text-field"
+          type="text"
+          disabled
+          [value]="this.lessonDefaultDate | date: 'fullDate':'':'pl_PL'"
+          [class.ng-valid]='lessonDate.valid'
+          [class.is-invalid]="!lessonDate.valid && lessonDate.touched">
+
+          <!-- [class.ng-valid]='lessonDate.valid'
+          [class.ng-invalid]="!lessonDate.valid && lessonDate.touched" -->
+
+          <input
+          type="date"
+          required
+          [(ngModel)]='this.lessonDefaultDate'
+          #lessonDate='ngModel'
+          (change)='updateLessonDate(lessonDate.value)'
+          [min]='this.dialogData.scheduleCurrentDate'
+          name="date"
+          class="form-control date-field-input"
+          [class.ng-valid]='lessonDate.valid'
+          [class.is-invalid]="!lessonDate.valid && lessonDate.touched">
+
+      </div>
+
+      <div class="form-field time-field">
+        <label for="time">Godzina lekcji</label>
+        <input
+        type="text"
+        required
+        [(ngModel)]='this.lessonDefaultTime'
+        #lessonTime='ngModel'
+        name="time"
+        class="form-control time-field-input"
+        >
+
+        <div class="time-select"
+        (change)="updateLessonTime(lessonHour.value, lessonMinutes.value)">
+          <select
+          #lessonHour
+          required
+          class="form-control"
+          [class.ng-valid]='lessonTime.valid'
+          [class.is-invalid]="!lessonTime.valid && lessonTime.touched">
+            <option value="" selected disabled hidden>--</option>
+            <option value="08">8</option>
+            <option value="09">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
+          :
+          <select
+          #lessonMinutes
+          required
+          class="form-control"
+          [class.ng-valid]='lessonTime.valid'
+          [class.is-invalid]="!lessonTime.valid && lessonTime.touched">
+            <option value="" selected disabled hidden>--</option>
+            <option value="00">00</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+          </select>
+
+        </div>
+      </div>
+
+      <div class="form-field duration-field">
+        <label for="duration">Czas [h]</label>
+        <select
+        required
+        ngModel
+        #lessonDuration='ngModel'
+        name="duration"
+        class="form-control"
+        [class.ng-valid]=lessonDuration.valid
+        [class.is-invalid]="!lessonDuration.valid && lessonDuration.touched"
+        (change)="checkExistingLessons(lessonForm.value)">
+          <!-- <option value="30">0.5</option>
+          <option value="60">1</option>
+          <option value="90">1.5</option>
+          <option value="120">2</option>
+          <option value="150">2.5</option>
+          <option value="180">3</option> -->
+          <option value="0.5">0.5</option>
+          <option value="1">1</option>
+          <option value="1.5">1.5</option>
+          <option value="2">2</option>
+          <option value="2.5">2.5</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="form-field student-field">
+      <label for="student">Kursant</label>
+      <input  #studentNameInput type="text" name="student" id="student"
+      required
+      #lessonStudent='ngModel'
+      [ngModel]='studentIdsList'
+      (input)="search(studentNameInput)" (focus)="search(studentNameInput)"
+      (blur)="hideList()"
+      class="form-control"
+      [class.ng-valid]=lessonStudent.valid
+      [class.is-invalid]="!lessonStudent.valid && lessonStudent.touched">
+
+      <div class="search-list-container">
+        <ul class="search-ul-Parent" *ngIf="studentsDropdownList.length">
+          <li class="searchElement" *ngFor="let student of studentsDropdownList"
+          (mousedown)="getNameValue(student, studentNameInput)">
+
+              {{student.name}} {{student.surname}} lvl. {{student.iko_level}}
+
+          </li>
+        </ul>
+      </div>
+      <div class="student-display-list-div">
+        <ul class="student-display-list">
+          <li class="student-list-item" *ngFor="let stud of studentDisplayList">
+            <span>{{stud.name}} lvl. {{stud.iko_level}}</span>
+            <fa-icon [icon]="faTimesIcon" (click)="removeStudent(stud.id)"></fa-icon>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="form-field instructor-field">
+      <label for="instructor">Instruktor</label>
+      <input  #instructorNameInput type="text" name="instructor" id="instructor"
+      required
+      #lessonInstructor='ngModel'
+      [ngModel]='instructorIdsList'
+      class="form-control"
+      [class.ng-valid]=lessonInstructor.valid
+      [class.is-invalid]="!lessonInstructor.valid && lessonInstructor.touched"
+      (input)="search(instructorNameInput)" (focus)="search(instructorNameInput)"
+      (blur)="hideList();
+      checkExistingLessons(lessonForm.value)">
+      <div class="search-list-container">
+        <ul class="search-ul-Parent" *ngIf="instructorsDropdownList.length">
+          <li class="searchElement" *ngFor="let instructor of instructorsDropdownList"
+          (mousedown)="getNameValue(instructor, instructorNameInput)">
+
+              {{instructor.name}} {{instructor.surname}}
+
+          </li>
+        </ul>
+      </div>
+      <div class="instructor-display-list-div">
+        <ul class="instructor-display-list">
+          <li class="instructor-list-item" *ngFor="let instr of instructorDisplayList">
+            <span>{{instr.name}}</span>
+            <fa-icon [icon]="faTimesIcon" (click)="removeInstructor(instr.id)"></fa-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-field status-field">
+      <label for="status">Status</label>
+      <select
+      required
+      #lessonStatus='ngModel'
+      class="dialog-dropdown form-control"
+      ngModel
+      name="status"
+      [class.ng-valid]=lessonStatus.valid
+      [class.is-invalid]="!lessonStatus.valid && lessonStatus.touched">
+        <option value="0_NC">Niepotwierdzona</option>
+        <option value="0_C">Potwierdzona</option>
+      </select>
+    </div>
+
+
+    <div class="form-field paid-field">
+    </div>
+
+    <hr>
+    <div class="divider-not-required-text">Opcjonalne</div>
+
+    <div class="form-field equipment-field">
+      <label for="equipment">Sprzęt</label>
+      <select
+      class="dialog-dropdown"
+      ngModel
+      #lessonEquipment='ngModel'
+      name="equipment">
+        <option value="Szkółka">Szkółka</option>
+        <option value="Własny">Własny</option>
+      </select>
+    </div>
+
+
+    <div class="form-field kite-field">
+      <label for="kite_brand">Latawiec</label>
+      <input
+      type="text"
+      ngModel
+      #lessonKite='ngModel'
+      name="kite_brand">
+    </div>
+
+    <!-- <div>
+      <label>Rozmiar</label>
+      <input
+      type="number"
+      ngModel
+      name="kite_size">
+    </div> -->
+
+    <div class="form-field board-field">
+      <label for="board">Deska</label>
+      <input
+      required="false"
+      type="text"
+      ngModel
+      #lessonBoard='ngModel'
+      name="board">
+    </div>
+
+    <div class="form-field comment-field">
+      <label for="comment">Dodatkowe informacje</label>
+      <textarea
+      required="false"
+      type="text"
+      ngModel
+      #lessonComment='ngModel'
+      name="comment"></textarea>
+    </div>
+
+    <div class="dialog-action-buttons">
+
+      <button mat-stroked-button type="button"
+      class="cancel-button" (click)="exitDialog()">
+        Anuluj
+      </button>
+
+      <button mat-stroked-button
+      class="submit-button"
+      type="submit"
+      (click)="createLesson(lessonForm)"
+      [disabled]="lessonTimeConflict || !lessonForm.valid">
+        Dodaj
+      </button>
+    </div>
+
+  </form>
+
+</mat-dialog-content>

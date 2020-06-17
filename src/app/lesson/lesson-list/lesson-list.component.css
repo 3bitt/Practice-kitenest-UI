@@ -1,0 +1,21 @@
+
+.lessons-table{
+  padding: 10px;
+}
+
+.paid-icon {
+  color: green;
+}
+
+.not-paid-icon {
+  color: rgb(168, 0, 0);
+}
+
+.lesson-paid{
+  background-color: #add5ad;
+}
+
+/* .multi-row{
+  display: flex;
+  flex-direction: column;
+} */

@@ -1,28 +1,31 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './shared/components';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
 
-import { HomeRoutingModule } from './home/home-routing.module';
-import { DetailRoutingModule } from './detail/detail-routing.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'app',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
-  {
-    path: '**',
-    component: PageNotFoundComponent
+  { path: '**',
+    redirectTo: 'login', pathMatch: 'full'
   }
-];
+
+  ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-    HomeRoutingModule,
-    DetailRoutingModule
+    RouterModule.forRoot(
+      routes,
+      {
+        // enableTracing: true,
+        preloadingStrategy: PreloadAllModules
+      })
   ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
