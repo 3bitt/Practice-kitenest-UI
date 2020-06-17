@@ -1,19 +1,19 @@
-import { IInstructorPagingResponse } from './../../../shared/API-response/IInstructorResponse';
+import { IInstructorPagingResponse } from './../../shared/API-response/IInstructorResponse';
 import { Subscription } from 'rxjs';
-import { IpagingResponse } from './../../../models/response';
+import { IpagingResponse } from './../../models/response';
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { InstructorService } from 'src/app/service/instructor/instructor.service';
+import { InstructorService } from '../../service/instructor/instructor.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDeleteDialogComponent } from 'src/app/shared/confirm-delete-dialog/confirm-delete-dialog.component';
+import { ConfirmDeleteDialogComponent } from '../../shared/confirm-delete-dialog/confirm-delete-dialog.component';
 
 
 
 @Component({
   selector: 'app-instructor-list',
   templateUrl: './instructor-list.component.html',
-  styleUrls: ['./instructor-list.component.css']
+  styleUrls: ['./instructor-list.component.scss']
 })
 export class InstructorListComponent implements OnInit, OnDestroy {
 

@@ -1,14 +1,14 @@
 import { map, catchError } from 'rxjs/operators';
 import { Observable, Subscription, of } from 'rxjs';
-import { IpagingResponse } from 'src/app/models/response';
-import { LessonService } from './../../../service/lesson/lesson.service';
+import { IpagingResponse } from '../../models/response';
+import { LessonService } from './../../service/lesson/lesson.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ILessonPagingResponse } from 'src/app/shared/API-response/ILessonResponse';
+import { ILessonPagingResponse } from '../../shared/API-response/ILessonResponse';
 
 @Component({
   selector: 'app-lesson-list',
   templateUrl: './lesson-list.component.html',
-  styleUrls: ['./lesson-list.component.css']
+  styleUrls: ['./lesson-list.component.scss']
 })
 export class LessonListComponent implements OnInit, OnDestroy {
 

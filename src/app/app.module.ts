@@ -26,11 +26,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { registerLocaleData } from '@angular/common';
+import localePl from '@angular/common/locales/pl';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+registerLocaleData(localePl, 'pl_PL');
+
 
 @NgModule({
   declarations: [AppComponent],

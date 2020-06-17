@@ -1,10 +1,10 @@
-import { Instructor } from './../../components/instructor/model/instructor';
+import { Instructor } from './../../instructor/model/instructor';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
-import { IpagingResponse, IDetailResponse } from 'src/app/models/response';
-import { IInstructorPagingResponse } from 'src/app/shared/API-response/IInstructorResponse';
+import { IpagingResponse, IDetailResponse } from '../../models/response';
+import { IInstructorPagingResponse } from '../../shared/API-response/IInstructorResponse';
 
 
 @Injectable({

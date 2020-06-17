@@ -1,10 +1,10 @@
+import { Tokens } from '../../models/interfaces/IAuth';
 import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, tap, mapTo, catchError, throttleTime, debounceTime, distinctUntilChanged, map, share } from 'rxjs/operators';
 import {config} from '../../../config/config';
-import { Tokens } from 'src/app/models/interfaces/IAuth';
 
 @Injectable({
   providedIn: 'root'

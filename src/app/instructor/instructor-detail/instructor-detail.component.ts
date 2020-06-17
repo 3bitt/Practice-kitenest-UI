@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { InstructorService } from 'src/app/service/instructor/instructor.service';
-import { IInstructorDetailResponse } from 'src/app/shared/API-response/IInstructorResponse';
+import { InstructorService } from '../../service/instructor/instructor.service';
+import { IInstructorDetailResponse } from '../../shared/API-response/IInstructorResponse';
 
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { NgForm } from '@angular/forms';
@@ -12,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-instructor-detail',
   templateUrl: './instructor-detail.component.html',
-  styleUrls: ['./instructor-detail.component.css']
+  styleUrls: ['./instructor-detail.component.scss']
 })
 export class InstructorDetailComponent implements OnInit, OnDestroy {
 

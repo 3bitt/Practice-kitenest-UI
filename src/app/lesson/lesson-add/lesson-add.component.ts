@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { LessonService } from './../../../service/lesson/lesson.service';
+import { LessonService } from './../../service/lesson/lesson.service';
 import { Lesson } from './../model/lesson';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -8,7 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-lesson-add',
   templateUrl: './lesson-add.component.html',
-  styleUrls: ['./lesson-add.component.css']
+  styleUrls: ['./lesson-add.component.scss']
 })
 export class LessonAddComponent implements OnInit, OnDestroy {
 

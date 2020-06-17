@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-forecast',
   templateUrl: './forecast.component.html',
-  styleUrls: ['./forecast.component.css']
+  styleUrls: ['./forecast.component.scss']
 })
 export class ForecastComponent implements OnInit, AfterViewInit {
 

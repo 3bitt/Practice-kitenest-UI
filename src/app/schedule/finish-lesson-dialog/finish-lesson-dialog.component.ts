@@ -1,12 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ScheduleService } from 'src/app/service/schedule/schedule.service';
-import { StudentService } from 'src/app/service/student/student.service';
+import { ScheduleService } from '../../service/schedule/schedule.service';
+import { StudentService } from '../../service/student/student.service';
 
 @Component({
   selector: 'app-finish-lesson-dialog',
   templateUrl: './finish-lesson-dialog.component.html',
-  styleUrls: ['./finish-lesson-dialog.component.css']
+  styleUrls: ['./finish-lesson-dialog.component.scss']
 })
 export class FinishLessonDialogComponent implements OnInit {
 

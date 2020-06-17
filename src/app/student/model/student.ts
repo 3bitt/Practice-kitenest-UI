@@ -1,4 +1,4 @@
-import { IStudentDetailResponse } from './../../../shared/API-response/IStudentResponse';
+import { IStudentDetailResponse } from './../../shared/API-response/IStudentResponse';
 export class Student implements IStudentDetailResponse {
 
     constructor(

@@ -1,7 +1,7 @@
-import { IStudentDetailResponse } from './../../../shared/API-response/IStudentResponse';
-import { StudentService } from 'src/app/service/student/student.service';
+import { IStudentDetailResponse } from './../../shared/API-response/IStudentResponse';
+import { StudentService } from '../../service/student/student.service';
 import { Student } from './../model/student';
-import { IStudent } from './../../../models/studentModel';
+import { IStudent } from './../../models/studentModel';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgModel, NgForm } from '@angular/forms';
 import { NgClass, formatDate, getLocaleDateFormat } from '@angular/common';
@@ -13,7 +13,7 @@ import { NONE_TYPE } from '@angular/compiler';
 @Component({
   selector: 'app-student-add',
   templateUrl: './student-add.component.html',
-  styleUrls: ['./student-add.component.css']
+  styleUrls: ['./student-add.component.scss']
 })
 export class StudentAddComponent implements OnInit, OnDestroy {
 

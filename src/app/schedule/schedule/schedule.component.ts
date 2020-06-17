@@ -7,13 +7,13 @@ import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 
 import {faPlus, faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
-import { ScheduleService } from 'src/app/service/schedule/schedule.service';
+import { ScheduleService } from '../../service/schedule/schedule.service';
 import { CreateLessonDialogComponent } from '../create-lesson-dialog/create-lesson-dialog.component';
 
 @Component({
   selector: 'app-schedule',
   templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.css'],
+  styleUrls: ['./schedule.component.scss'],
 })
 export class ScheduleComponent implements OnInit {
 

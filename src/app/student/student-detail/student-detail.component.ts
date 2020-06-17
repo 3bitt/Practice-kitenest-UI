@@ -1,10 +1,9 @@
-import { IStudentDetailResponse } from './../../../shared/API-response/IStudentResponse';
+import { IStudentDetailResponse } from './../../shared/API-response/IStudentResponse';
 import { switchMap } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { IDetailResponse } from './../../../models/response';
 import { Component, OnInit, OnDestroy, OnChanges, DoCheck } from '@angular/core';
-import { StudentService } from 'src/app/service/student/student.service';
+import { StudentService } from '../../service/student/student.service';
 import { Student } from '../model/student';
 import { IIStudent } from '../model/student-interface';
 import { Form, NgForm } from '@angular/forms';
@@ -13,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-student-detail',
   templateUrl: './student-detail.component.html',
-  styleUrls: ['./student-detail.component.css']
+  styleUrls: ['./student-detail.component.scss']
 })
 export class StudentDetailComponent implements OnInit, OnDestroy, DoCheck {
 

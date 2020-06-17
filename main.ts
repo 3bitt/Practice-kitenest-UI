@@ -23,6 +23,12 @@ function createWindow(): BrowserWindow {
     },
   });
 
+  // const mainWindow = new BrowserWindow({
+  //   webPreferences: {
+  //     preload: path.join(app.getAppPath(), 'preload.js')
+  //   }
+  // })
+
   if (serve) {
 
     require('devtron').install();

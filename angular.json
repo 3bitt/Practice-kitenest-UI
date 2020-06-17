@@ -85,7 +85,8 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "kitescontrol-UI:build"
+            "browserTarget": "kitescontrol-UI:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "dev": {

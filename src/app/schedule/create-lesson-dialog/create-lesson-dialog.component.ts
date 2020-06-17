@@ -1,15 +1,15 @@
-import { IInstructor } from './../../../models/instructorModel';
+import { IInstructor } from './../../models/instructorModel';
 import { NgForm, NgModel, FormControl } from '@angular/forms';
 import { Lesson, ISchedule, IScheduleInstructor, LessonInstructor } from './../model/schedule-interface';
-import { IStudent } from './../../../models/studentModel';
-import { InstructorService } from 'src/app/service/instructor/instructor.service';
-import { IInstructorPagingResponse } from 'src/app/shared/API-response/IInstructorResponse';
-import { IStudentPagingResponse } from './../../../shared/API-response/IStudentResponse';
-import { StudentService } from 'src/app/service/student/student.service';
+import { IStudent } from './../../models/studentModel';
+import { InstructorService } from '../../service/instructor/instructor.service';
+import { IInstructorPagingResponse } from '../../shared/API-response/IInstructorResponse';
+import { IStudentPagingResponse } from './../../shared/API-response/IStudentResponse';
+import { StudentService } from '../../service/student/student.service';
 import { Subscription } from 'rxjs';
 import { Component, OnInit, Inject, OnDestroy, Pipe, ElementRef, ViewEncapsulation, Input, ViewChild, AfterViewInit, AfterViewChecked, ChangeDetectorRef, AfterContentChecked, AfterContentInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
-import { ScheduleService } from 'src/app/service/schedule/schedule.service';
+import { ScheduleService } from '../../service/schedule/schedule.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatInput } from '@angular/material/input';
 import { formatDate } from '@angular/common';
@@ -19,7 +19,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-create-lesson-dialog',
   templateUrl: './create-lesson-dialog.component.html',
-  styleUrls: ['./create-lesson-dialog.component.css'],
+  styleUrls: ['./create-lesson-dialog.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class CreateLessonDialogComponent implements OnInit, OnDestroy {

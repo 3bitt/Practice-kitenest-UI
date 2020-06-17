@@ -1,4 +1,4 @@
-import { Lesson } from './../../components/schedule/model/schedule-interface';
+import { Lesson } from './../../schedule/model/schedule-interface';
 import { catchError, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';

@@ -22,6 +22,7 @@ const routes: Routes = [
       routes,
       {
         // enableTracing: true,
+        useHash: true,
         preloadingStrategy: PreloadAllModules
       })
   ],

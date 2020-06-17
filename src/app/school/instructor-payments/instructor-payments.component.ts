@@ -1,15 +1,14 @@
-import { SchoolService } from './../../../service/school/school.service';
+import { SchoolService } from './../../service/school/school.service';
 import { Subscription } from 'rxjs';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { IHours } from './model/IHours';
 import {faPlus, faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
-import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-instructor-payments',
   templateUrl: './instructor-payments.component.html',
-  styleUrls: ['./instructor-payments.component.css']
+  styleUrls: ['./instructor-payments.component.scss']
 })
 export class InstructorPaymentsComponent implements OnInit, OnDestroy {
 

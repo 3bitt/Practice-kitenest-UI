@@ -1,20 +1,20 @@
-import { Student, Instructor } from './../../../shared/API-response/ILessonResponse';
-import { InstructorService } from 'src/app/service/instructor/instructor.service';
-import { StudentService } from 'src/app/service/student/student.service';
+import { Student, Instructor } from './../../shared/API-response/ILessonResponse';
+import { InstructorService } from '../../service/instructor/instructor.service';
+import { StudentService } from '../../service/student/student.service';
 import { Subscription } from 'rxjs';
 import { IScheduleInstructor, Lesson } from './../model/schedule-interface';
 import { Component, OnInit, ViewEncapsulation, Inject, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ScheduleService } from 'src/app/service/schedule/schedule.service';
-import { IStudentPagingResponse } from 'src/app/shared/API-response/IStudentResponse';
-import { IInstructorPagingResponse } from 'src/app/shared/API-response/IInstructorResponse';
+import { ScheduleService } from '../../service/schedule/schedule.service';
+import { IStudentPagingResponse } from '../../shared/API-response/IStudentResponse';
+import { IInstructorPagingResponse } from '../../shared/API-response/IInstructorResponse';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-edit-lesson-dialog',
   templateUrl: './edit-lesson-dialog.component.html',
-  styleUrls: ['./edit-lesson-dialog.component.css'],
+  styleUrls: ['./edit-lesson-dialog.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class EditLessonDialogComponent implements OnInit, OnDestroy {

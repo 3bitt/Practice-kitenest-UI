@@ -1,17 +1,17 @@
-import { ConfirmDeleteDialogComponent } from './../../../shared/confirm-delete-dialog/confirm-delete-dialog.component';
-import { IpagingResponse } from './../../../models/response';
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StudentService } from 'src/app/service/student/student.service';
-import { IStudentPagingResponse } from 'src/app/shared/API-response/IStudentResponse';
-import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
+import { StudentService } from '../../service/student/student.service';
+import { IStudentPagingResponse } from '../../shared/API-response/IStudentResponse';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDeleteDialogComponent } from '../../shared/confirm-delete-dialog/confirm-delete-dialog.component';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
-  styleUrls: ['./student-list.component.css']
+  styleUrls: ['./student-list.component.scss']
 })
 
 export class StudentListComponent implements OnInit, OnDestroy {

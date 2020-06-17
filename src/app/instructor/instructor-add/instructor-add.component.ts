@@ -4,13 +4,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Instructor } from '../model/instructor';
 import { NgForm } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
-import { InstructorService } from 'src/app/service/instructor/instructor.service';
+import { InstructorService } from '../../service/instructor/instructor.service';
 
 
 @Component({
   selector: 'app-instructor-add',
   templateUrl: './instructor-add.component.html',
-  styleUrls: ['./instructor-add.component.css']
+  styleUrls: ['./instructor-add.component.scss']
 })
 export class InstructorAddComponent implements OnDestroy {
 

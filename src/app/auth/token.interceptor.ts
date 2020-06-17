@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { config } from './../../config/config';
+import { config } from '../../config/config';
 import { catchError, switchMap, take, filter, throttleTime, tap } from 'rxjs/operators';
 import { AuthService } from './service/auth.service';
 import { Injectable } from '@angular/core';

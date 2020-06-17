@@ -1,23 +1,23 @@
-import { StudentService } from './../../../service/student/student.service';
+import { StudentService } from './../../service/student/student.service';
 import { FinishLessonDialogComponent } from './../finish-lesson-dialog/finish-lesson-dialog.component';
 import { HttpErrorResponse } from '@angular/common/http';
 import { EditLessonDialogComponent } from './../edit-lesson-dialog/edit-lesson-dialog.component';
 import { Subscription } from 'rxjs';
 import { Component, OnInit, Input, OnDestroy, ElementRef } from '@angular/core';
-import { ScheduleService } from 'src/app/service/schedule/schedule.service';
+import { ScheduleService } from '../../service/schedule/schedule.service';
 import { faCheckCircle,  faPlayCircle,
   faDollarSign, faQuestionCircle, faQuestion, faTrashAlt,
 faEdit } from '@fortawesome/free-solid-svg-icons';
 import { ISchedule, IScheduleInstructor, Lesson } from '../model/schedule-interface';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDeleteDialogComponent } from 'src/app/shared/confirm-delete-dialog/confirm-delete-dialog.component';
-import { ILessonDetailResponse } from 'src/app/shared/API-response/ILessonResponse';
+import { ConfirmDeleteDialogComponent } from '../../shared/confirm-delete-dialog/confirm-delete-dialog.component';
+import { ILessonDetailResponse } from '../../shared/API-response/ILessonResponse';
 
 
 @Component({
   selector: 'app-schedule-lesson',
   templateUrl: './schedule-lesson.component.html',
-  styleUrls: ['./schedule-lesson.component.css']
+  styleUrls: ['./schedule-lesson.component.scss']
 })
 export class ScheduleLessonComponent implements OnInit, OnDestroy {
 

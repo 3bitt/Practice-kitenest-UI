@@ -1,4 +1,4 @@
-import { ConfirmDeleteDialogComponent } from './../../shared/confirm-delete-dialog/confirm-delete-dialog.component';
+import { StudentService } from '../service/student/student.service';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +9,6 @@ import { StudentRoutingModule } from './student-routing.module';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { StudentAddComponent } from './student-add/student-add.component';
-import { StudentService } from 'src/app/service/student/student.service';
 import { StudentDetailEditComponent } from './student-detail/student-detail-edit/student-detail-edit.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatDialogModule } from '@angular/material/dialog';

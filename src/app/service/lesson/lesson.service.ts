@@ -1,10 +1,10 @@
-import { Lesson } from './../../components/lesson/model/lesson';
-import { IpagingResponse } from 'src/app/models/response';
+import { Lesson } from './../../lesson/model/lesson';
+import { IpagingResponse } from '../../models/response';
 import { Injectable } from '@angular/core';
 import { catchError, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { ILessonPagingResponse } from 'src/app/shared/API-response/ILessonResponse';
+import { ILessonPagingResponse } from '../../shared/API-response/ILessonResponse';
 
 
 

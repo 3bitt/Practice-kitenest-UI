@@ -4,7 +4,7 @@ import { Form, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-student-detail-edit',
   templateUrl: './student-detail-edit.component.html',
-  styleUrls: ['./student-detail-edit.component.css']
+  styleUrls: ['./student-detail-edit.component.scss']
 })
 export class StudentDetailEditComponent implements OnInit {
 

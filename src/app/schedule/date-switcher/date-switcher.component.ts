@@ -1,6 +1,6 @@
 import { debounceTime } from 'rxjs/operators';
 import { Subscription, Subject } from 'rxjs';
-import { ScheduleService } from 'src/app/service/schedule/schedule.service';
+import { ScheduleService } from '../../service/schedule/schedule.service';
 import { formatDate } from '@angular/common';
 import { Component, OnInit, OnDestroy, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 
@@ -11,7 +11,7 @@ import {faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-date-switcher',
   templateUrl: './date-switcher.component.html',
-  styleUrls: ['./date-switcher.component.css']
+  styleUrls: ['./date-switcher.component.scss']
 })
 export class DateSwitcherComponent implements OnInit, OnChanges, OnDestroy {
 

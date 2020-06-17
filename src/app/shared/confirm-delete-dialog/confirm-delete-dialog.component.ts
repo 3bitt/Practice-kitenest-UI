@@ -5,7 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   encapsulation: ViewEncapsulation.None,
   selector: 'app-confirm-delete-dialog',
   templateUrl: './confirm-delete-dialog.component.html',
-  styleUrls: ['./confirm-delete-dialog.component.css']
+  styleUrls: ['./confirm-delete-dialog.component.scss']
 })
 export class ConfirmDeleteDialogComponent implements OnInit {
 

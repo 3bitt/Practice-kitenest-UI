@@ -1,11 +1,11 @@
-import { Student } from './../../components/student/model/student';
+import { Student } from './../../student/model/student';
 import { IStudent } from './../../models/studentModel';
 import { IpagingResponse, IDetailResponse } from './../../models/response';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IStudentPagingResponse, IStudentDetailResponse } from 'src/app/shared/API-response/IStudentResponse';
+import { IStudentPagingResponse, IStudentDetailResponse } from '../../shared/API-response/IStudentResponse';
 
 @Injectable({
   providedIn: 'root'
