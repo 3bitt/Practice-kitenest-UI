@@ -1,3 +1,4 @@
+import { MatDividerModule } from '@angular/material/divider';
 import { StudentService } from '../service/student/student.service';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
@@ -12,6 +13,7 @@ import { StudentAddComponent } from './student-add/student-add.component';
 import { StudentDetailEditComponent } from './student-detail/student-detail-edit/student-detail-edit.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatDialogModule } from '@angular/material/dialog';
+import { StudentHomeComponent } from './student-home/student-home.component';
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     StudentDetailComponent,
     StudentAddComponent,
     StudentDetailEditComponent,
+    StudentHomeComponent,
 
 
   ],
@@ -28,7 +31,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     StudentRoutingModule,
     FormsModule,
     MatButtonModule,
-    FontAwesomeModule,
+    FontAwesomeModule
 
   ],
   providers: [StudentService]

@@ -1,3 +1,5 @@
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NavigationComponent } from './navigation/navigation.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -61,6 +63,7 @@ registerLocaleData(localePl, 'pl_PL');
     SharedModule,
     HomeModule,
     AppRoutingModule,
+    MDBBootstrapModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

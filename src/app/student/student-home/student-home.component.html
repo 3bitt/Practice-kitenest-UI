@@ -1,0 +1,27 @@
+<div class="stud-home-container">
+
+  <div class="stud-section">
+
+    <div class="stud-section-header">
+      <span id="stud-section-title">Panel kursantów</span>
+    </div>
+
+    <div class="stud-actions-container">
+
+      <div class="stud-action-box" [routerLink]='"add-student"' routerLinkActive="active-link">
+        <fa-icon [icon]='plusIcon'></fa-icon>
+        <span class="action-text">Dodaj kursanta</span>
+      </div>
+
+      <div class="stud-action-box" [routerLink]='"search"' routerLinkActive="active-link">
+        <fa-icon [icon]='searchIcon'></fa-icon>
+        <span class="action-text">Wyszukaj</span>
+      </div>
+    </div>
+
+  </div>
+
+  <router-outlet></router-outlet>
+
+
+</div>

@@ -1,3 +1,4 @@
+import { StudentHomeComponent } from './student-home/student-home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentListComponent } from './student-list/student-list.component';
@@ -6,9 +7,17 @@ import { StudentDetailComponent } from './student-detail/student-detail.componen
 
 const routes: Routes = [
 
-  { path: '', component: StudentListComponent },
-  { path: 'add-student', component: StudentAddComponent },
-  { path: ':id', component: StudentDetailComponent },
+  {
+    path: '', component: StudentHomeComponent,
+    children: [
+      { path: 'add-student', component: StudentAddComponent },
+      { path: 'search', component: StudentListComponent },
+      { path: ':id', component: StudentDetailComponent },
+    ]
+  },
+  // { path: 'add-student', component: StudentAddComponent },
+  // { path: 'search', component: StudentListComponent},
+
 ];
 
 @NgModule({

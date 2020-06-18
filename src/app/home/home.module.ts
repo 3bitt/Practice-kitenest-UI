@@ -1,3 +1,5 @@
+import { MatDividerModule } from '@angular/material/divider';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './../navigation/navigation.component';
 import { NgModule } from '@angular/core';
@@ -7,6 +9,7 @@ import { HomeRoutingModule } from './home-routing.module';
 
 import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    MDBBootstrapModule.forRoot(),
+    FontAwesomeModule,
   ],
   exports: [RouterModule]
 })

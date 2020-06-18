@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthGuard } from './../auth/guard/auth.guard';
 import { AuthService } from './../auth/service/auth.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { faUserFriends, faHome, faGraduationCap, faUserGraduate, faUsers, faMoneyCheck } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navigation',
@@ -11,11 +12,17 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class NavigationComponent implements OnDestroy{
 
+  subscription$: Subscription;
+  studentsIcon = faUserGraduate;
+  instructorsIcon = faUsers;
+  homeIcon = faHome;
+  lessonsIcon = faMoneyCheck
+
   constructor(public authService: AuthService,
               public router: Router,
               public route: ActivatedRoute) { }
 
-  subscription$: Subscription;
+
 
   logout(){
     this.subscription$ = this.authService.invalidateToken().subscribe();
